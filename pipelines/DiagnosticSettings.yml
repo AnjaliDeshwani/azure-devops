@@ -44,7 +44,7 @@ stages:
                   displayName: 'Run Diagnostic Settings JSON'
                   inputs:
                       azureSubscription: $(service_connection)
-                      ScriptPath: $(System.DefaultWorkingDirectory)/Azure/Platform/Diagnosticsettings/V1.0/Scripts/Create-DiagnosticSettingsCategories.ps1
+                      ScriptPath: $(System.DefaultWorkingDirectory)/azure-devops/scripts/DiagnosticSettings.yml
                       azurePowerShellVersion: LatestVersion
 
                 # Step 4: Publish the new JSON file for future runs
