@@ -3,7 +3,7 @@ name: $(TeamProject)_$(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)
 
 variables:
     AgentPool: 'windows-latest'
-    service_connection: 'ARM - TSE AZ Management Group'
+    service_connection: 'AD azure service'
 
 trigger: none
 
@@ -44,7 +44,7 @@ stages:
                   displayName: 'Run Diagnostic Settings JSON'
                   inputs:
                       azureSubscription: $(service_connection)
-                      ScriptPath: $(System.DefaultWorkingDirectory)/azure-devops/scripts/DiagnosticSettings.yml
+                      ScriptPath: $(System.DefaultWorkingDirectory)/azure-devops/scripts/DiagnosticSettings.ps1
                       azurePowerShellVersion: LatestVersion
 
                 # Step 4: Publish the new JSON file for future runs
